@@ -1,0 +1,48 @@
+import sys
+from PySide6.QtWidgets import *
+from PySide6.QtGui import QIcon,QPixmap
+
+
+calculator = QApplication(sys.argv)
+window = QWidget()
+window.setWindowTitle('Biblioteca Digital')
+#window.resize(300,200)#largura x altura
+window.setMaximumSize(300,300)
+window.setMinimumSize(300,300)
+
+endereco_imagem= QPixmap("C:\calculadora\logo\calculadora.png")
+logo= QIcon(endereco_imagem )
+window.setWindowIcon(logo)
+layout =  QGridLayout()
+button = QPushButton('Login')
+button2 = QPushButton('Cadastrar')
+altura= QLineEdit()
+senha = QLineEdit()
+senha.setEchoMode(QLineEdit.EchoMode.Password)
+label = QLabel('Email:')
+label2=QLabel('Senha:')
+credencias= []
+
+def Login():
+    
+    
+    
+
+button.clicked.connect(Login)
+
+def Cadastrar():
+    
+
+button2.clicked.connect(Cadastrar)
+
+layout.addWidget(label)
+layout.addWidget(altura)
+layout.addWidget(label2)
+layout.addWidget(senha)
+
+layout.addWidget(button)
+layout.addWidget(button2)
+
+window.setLayout(layout)
+window.show()
+calculator.exec()
